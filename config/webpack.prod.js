@@ -21,7 +21,7 @@ module.exports = merge(common, {
           MiniCssExtractPlugin.loader, // 3. Extract css into files
           {
             loader: "css-loader",
-            options: { importLoaders: 2, sourceMap: false, modules: false },
+            options: { importLoaders: 2, sourceMap: false, modules: true },
           }, // 2. turns css into commonjs
           "sass-loader", // 1. turns sass into css
         ],
