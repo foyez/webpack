@@ -18,11 +18,12 @@ module.exports = merge(common, {
       {
         test: /\.(sass|scss|css)$/,
         use: [
-          MiniCssExtractPlugin.loader, // 3. Extract css into files
+          MiniCssExtractPlugin.loader, // 4. Extract css into files
           {
             loader: "css-loader",
             options: { importLoaders: 2, sourceMap: false, modules: true },
-          }, // 2. turns css into commonjs
+          }, // 3. turns css into commonjs
+          "postcss-loader", // 2. add prefix in css
           "sass-loader", // 1. turns sass into css
         ],
       },
