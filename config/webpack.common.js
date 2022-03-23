@@ -1,4 +1,5 @@
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const webpack = require('webpack');
 
 const paths = require("./paths");
 
@@ -23,6 +24,10 @@ module.exports = {
         },
       ],
     }),
+    // set environment variables
+    new webpack.DefinePlugin({
+			"process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV || "development"),
+		}),
   ],
   module: {
     rules: [
