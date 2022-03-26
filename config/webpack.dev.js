@@ -33,7 +33,13 @@ module.exports = merge(common, {
           "style-loader", // 4. inject styles into dom
           {
             loader: "css-loader",
-            options: { sourceMap: true, importLoaders: 1, modules: true },
+            options: {
+              sourceMap: true,
+              importLoaders: 1,
+              modules: {
+                exportLocalsConvention: "camelCase", // red-color to redColor
+              },
+            },
           }, // 3. turns css into commonjs
           { loader: "postcss-loader", options: { sourceMap: true } }, // 2. add prefix in css
           { loader: "sass-loader", options: { sourceMap: true } }, // 1. turns sass into css

@@ -1,0 +1,10 @@
+{
+  "presets": [
+    "@babel/preset-env", // automatically detect ES2015, ES2016 or ES2017 and transpile accordingly
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-proposal-class-properties"
+  ]
+}

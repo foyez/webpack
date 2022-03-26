@@ -21,7 +21,13 @@ module.exports = merge(common, {
           MiniCssExtractPlugin.loader, // 4. Extract css into files
           {
             loader: "css-loader",
-            options: { importLoaders: 2, sourceMap: false, modules: true },
+            options: {
+              importLoaders: 2,
+              sourceMap: false,
+              modules: {
+                exportLocalsConvention: "camelCase", // red-color to redColor
+              },
+            },
           }, // 3. turns css into commonjs
           "postcss-loader", // 2. add prefix in css
           "sass-loader", // 1. turns sass into css

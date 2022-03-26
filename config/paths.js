@@ -1,12 +1,19 @@
+"use strict";
+
 const path = require("path");
+const fs = require("fs");
+
+// Make sure any symlinks in the project folder are resolved:
+const appDirectory = fs.realpathSync(process.cwd());
+const resolveApp = (relativePath) => path.resolve(appDirectory, relativePath);
 
 module.exports = {
   // Source files
-  src: path.resolve(__dirname, "../src"),
+  src: resolveApp("src"),
 
   // Production build files
-  build: path.resolve(__dirname, "../build"),
+  build: resolveApp("build"),
 
   // Static files that get copied to build folder
-  public: path.resolve(__dirname, "../public"),
+  public: resolveApp("public"),
 };
